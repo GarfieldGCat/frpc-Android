@@ -125,12 +125,13 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_frpc_kernel_ver"
             android:layout_width="match_parent"
             android:layout_marginTop="180dp"
             android:gravity="center"
             android:textSize="15dp"
             android:textColor="@android:color/darker_gray"
             android:layout_height="wrap_content"
-            android:text="frp kernel : 0.13.0 "/>
+            android:text="frp kernel: 0.0.0 "/>
     </LinearLayout>
 </LinearLayout>

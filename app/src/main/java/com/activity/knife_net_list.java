@@ -1,5 +1,7 @@
 package com.activity;
 
+import static com.frpc.R.*;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,21 +25,21 @@ import com.frpc.R;
 import java.io.File;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import frpclib.Frpclib;
 
 public class knife_net_list extends BaseRecyclerViewSwipeRefreshActivity<SuiDao> implements CompoundButton.OnCheckedChangeListener {
-    @Bind(R.id.foot_bar)
+    @BindView(R.id.foot_bar)
     View footBarView;
-    @Bind(R.id.edit)
+    @BindView(R.id.edit)
     TextView editTv;
-    @Bind(R.id.add)
+    @BindView(R.id.add)
     TextView addTv;
-    @Bind(R.id.all_check)
+    @BindView(R.id.all_check)
     CheckBox mAllCheck;
-    @Bind(R.id.start)
+    @BindView(R.id.start)
     TextView startTx;
     private List<SuiDao> SuiDaolist;
     long back_button_click_time;
@@ -49,6 +51,9 @@ public class knife_net_list extends BaseRecyclerViewSwipeRefreshActivity<SuiDao>
         super.onCreate(savedInstanceState);
         setContentView((R.layout.activity_my_suidao));
         ButterKnife.bind(this);
+        if(mAllCheck == null){
+            mAllCheck = (CheckBox) findViewById(R.id.all_check);
+        }
         mAllCheck.setOnCheckedChangeListener(this);
     }
 

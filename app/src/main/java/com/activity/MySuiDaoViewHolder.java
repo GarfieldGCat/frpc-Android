@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.activity.greendao.SuiDao;
 import com.frpc.R;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 
@@ -22,11 +22,11 @@ import butterknife.OnClick;
 
 public class MySuiDaoViewHolder extends BaseViewHolder<SuiDao> {
     public static final int LAYOUT_RES = R.layout.item_my_suidao;
-    @Bind(R.id.circle)public ImageView circleBox;
-    @Bind(R.id.name)public TextView nameTv;
-    @Bind(R.id.time)public TextView timeTv;
-    @Bind(R.id.info)public TextView infoTv;
-    @Bind(R.id.link)public Button linkBt;
+    @BindView(R.id.circle)public ImageView circleBox;
+    @BindView(R.id.name)public TextView nameTv;
+    @BindView(R.id.time)public TextView timeTv;
+    @BindView(R.id.info)public TextView infoTv;
+    @BindView(R.id.link)public Button linkBt;
     private String link;
     private String type;
     public MySuiDaoViewHolder(View itemView) {

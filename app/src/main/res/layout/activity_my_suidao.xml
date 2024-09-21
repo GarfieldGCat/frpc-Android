@@ -60,9 +60,10 @@
         android:id="@+id/foot_bar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_gravity="bottom"
         android:background="@android:color/white">
+
         <CheckBox
             android:id="@+id/all_check"
             android:layout_width="wrap_content"
@@ -74,6 +75,7 @@
             android:textColor="@android:color/black"
             android:text="全部选择"
             android:button="@drawable/custom_radio_btn"/>
+
         <TextView
             android:id="@+id/remove"
             android:layout_width="100dp"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.activity.greendao.DBSuiDaoHelper;
@@ -17,6 +18,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import frpclib.Frpclib;
+
 
 /**
  * A login screen that offers login via email/password.
@@ -26,6 +29,7 @@ public class LoginActivity extends Activity {
     private EditText Exservice_ip;//服务器ip
     private EditText Exservice_port;//服务器端口号
     private EditText Exservice_token;//服务器登录token
+    private TextView FrpcKernelVer;//FRPC Version
     private Button Btsave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class LoginActivity extends Activity {
         Exservice_ip = findViewById(R.id.service_ip);
         Exservice_port = findViewById(R.id.service_port);
         Exservice_token = findViewById(R.id.service_token);
+        FrpcKernelVer = findViewById(R.id.tv_frpc_kernel_ver);
+        FrpcKernelVer.setText("frp kernel: " + Frpclib.getVersion());
         Btsave = findViewById(R.id.save);
     }
     private void initEvent(){
@@ -104,25 +110,25 @@ public class LoginActivity extends Activity {
                 String common = "[common]\r\n";
                 String server_addr = "server_addr ="+service_ip+"\r\n";
                 String server_port = "server_port = "+ service_port + "\r\n";
-                String privilege_token = "privilege_token = " + service_token + "\r\n";
-                String admin_addr = "admin_addr = 0.0.0.0"+"\r\n";
-                String admin_port = "admin_port = 7400"+"\r\n";
-                String admin_user = "admin_user = admin"+"\r\n";
-                String admin_pwd = "admin_pwd = admin"+"\r\n";
-                String pool_count = "pool_count = 5"+"\r\n";
-                String tcp_mux = "tcp_mux = true"+"\r\n";
+                String privilege_token = "token = " + service_token + "\r\n";
+//                String admin_addr = "admin_addr = 0.0.0.0"+"\r\n";
+//                String admin_port = "admin_port = 7400"+"\r\n";
+//                String admin_user = "admin_user = admin"+"\r\n";
+//                String admin_pwd = "admin_pwd = admin"+"\r\n";
+//                String pool_count = "pool_count = 5"+"\r\n";
+//                String tcp_mux = "tcp_mux = true"+"\r\n";
                 String login_fail_exit = "login_fail_exit = true"+"\r\n";
                 String protocol = "protocol = tcp"+"\r\n";
                 out.write(common.getBytes());
                 out.write(server_addr.getBytes());
                 out.write(server_port.getBytes());
                 out.write(privilege_token.getBytes());
-                out.write(admin_addr.getBytes());
-                out.write(admin_port.getBytes());
-                out.write(admin_user.getBytes());
-                out.write(admin_pwd.getBytes());
-                out.write(pool_count.getBytes());
-                out.write(tcp_mux.getBytes());
+//                out.write(admin_addr.getBytes());
+//                out.write(admin_port.getBytes());
+//                out.write(admin_user.getBytes());
+//                out.write(admin_pwd.getBytes());
+//                out.write(pool_count.getBytes());
+//                out.write(tcp_mux.getBytes());
                 out.write(login_fail_exit.getBytes());
                 out.write(protocol.getBytes());
 
