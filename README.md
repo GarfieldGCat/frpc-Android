@@ -1,5 +1,7 @@
 # 项目介绍
 
+修改自 hanqian200705/frpc-Android，调整了gradle和更新了frpc到0.60.0版本，基本已经跑通。
+
 [https://github.com/fatedier/frp](https://github.com/fatedier/frp)
 
 [https://www.frp.fun/](https://www.frp.fun/)
@@ -56,13 +58,6 @@ import frpclib.Frpclib;
 * 获取用户位置信息收录统计
 * 获取frps服务器列表信息，提供用户服务器选择匹配
 * 保存配置信息
-  
-  
-## 捐助
 
-* 微信支付捐助
-
-![winxin_pay.png](https://github.com/TelDragon/guacamole/blob/master/docs/_static/img/weixin_pay.png?raw=true)
- 
 * 感谢
 [bjbjoaoa@qq.com](mailto:bjbjoaoa@qq.com)
